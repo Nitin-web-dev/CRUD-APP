@@ -55,3 +55,70 @@ Add DELETE.
 Add proper loading/error handling.
 Refactor and understand the architecture.
 That way, by the end, you won't just have a Todo app—you'll understand why every piece exists and how frontend → API → backend → database actually works.
+
+
+
+
+
+todo-app/
+│
+├── client/                 # React frontend
+│
+├── server/                 # Node + Express backend
+│
+├── .gitignore
+└── README.md
+
+
+
+
+client/
+│
+├── src/
+│   │
+│   ├── components/
+│   │   ├── TodoForm.jsx
+│   │   ├── TodoList.jsx
+│   │   └── TodoItem.jsx
+│   │
+│   ├── pages/
+│   │   └── TodoPage.jsx
+│   │
+│   ├── services/
+│   │   └── todoApi.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── package.json
+└── ...
+
+
+
+
+server/
+│
+├── src/
+│   │
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── models/
+│   │   └── Todo.js
+│   │
+│   ├── routes/
+│   │   └── todoRoutes.js
+│   │
+│   ├── controllers/
+│   │   └── todoController.js
+│   │
+│   ├── middleware/
+│   │   └── errorHandler.js
+│   │
+│   ├── app.js
+│   └── server.js
+│
+├── .env
+├── .gitignore
+└── package.json
