@@ -1,0 +1,57 @@
+GET    /todos
+POST   /todos
+GET    /todos/1
+PUT    /todos/1
+PATCH  /todos/1   // for updating checkbox 
+DELETE /todos/1
+
+
+
+                 BROWSER
+             ┌─────────────┐
+             │  FRONTEND   │
+             │             │
+             │ Components  │
+             │ Forms       │
+             │ State       │
+             │ Rendering   │
+             └──────┬──────┘
+                    │
+                    │ HTTP
+                    │
+             ┌──────▼──────┐
+             │   BACKEND   │
+             │             │
+             │ Routes      │
+             │ Controllers │
+             │ Validation  │
+             │ Business    │
+             │ Logic       │
+             └──────┬──────┘
+                    │
+                    │ SQL / DB driver
+                    │
+             ┌──────▼──────┐
+             │  DATABASE   │
+             │             │
+             │ todos table │
+             │ users table │
+             │ etc.        │
+             └─────────────┘
+
+
+When we start coding, I suggest we build a Todo app in small stages, rather than dumping a finished application on you:
+
+Build the frontend UI.
+Understand form state.
+Create the backend.
+Create the database/table.
+Make GET /todos.
+Display database data in the frontend.
+Make POST /todos.
+Create Todos from the form.
+Add PATCH to mark them complete.
+Add DELETE.
+Add proper loading/error handling.
+Refactor and understand the architecture.
+That way, by the end, you won't just have a Todo app—you'll understand why every piece exists and how frontend → API → backend → database actually works.
