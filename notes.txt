@@ -59,9 +59,54 @@ That way, by the end, you won't just have a Todo app—you'll understand why eve
 
 
 
+<<<<<<< HEAD
 server/
 │
 ├── src/
+=======
+
+todo-app/
+│
+├── client/                 # React frontend
+│
+├── server/                 # Node + Express backend
+│
+├── .gitignore
+└── README.md
+
+
+
+
+client/
+│
+├── src/
+│   │
+│   ├── components/
+│   │   ├── TodoForm.jsx
+│   │   ├── TodoList.jsx
+│   │   └── TodoItem.jsx
+│   │
+│   ├── pages/
+│   │   └── TodoPage.jsx
+│   │
+│   ├── services/
+│   │   └── todoApi.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── package.json
+└── ...
+
+
+
+
+server/
+│
+├── src/
+│   │
+>>>>>>> d8a17110a0009e32a192e760dac29531f0c69138
 │   ├── config/
 │   │   └── db.js
 │   │
@@ -74,12 +119,19 @@ server/
 │   ├── controllers/
 │   │   └── todoController.js
 │   │
+<<<<<<< HEAD
+=======
+│   ├── middleware/
+│   │   └── errorHandler.js
+│   │
+>>>>>>> d8a17110a0009e32a192e760dac29531f0c69138
 │   ├── app.js
 │   └── server.js
 │
 ├── .env
 ├── .gitignore
 └── package.json
+<<<<<<< HEAD
 
 
 
@@ -113,3 +165,5 @@ controllers/todoController.js
 models/Todo.js
    ↓
 MongoDB
+=======
+>>>>>>> d8a17110a0009e32a192e760dac29531f0c69138
