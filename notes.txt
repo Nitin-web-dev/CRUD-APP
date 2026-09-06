@@ -55,3 +55,61 @@ Add DELETE.
 Add proper loading/error handling.
 Refactor and understand the architecture.
 That way, by the end, you won't just have a Todo app—you'll understand why every piece exists and how frontend → API → backend → database actually works.
+
+
+
+
+server/
+│
+├── src/
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── models/
+│   │   └── Todo.js
+│   │
+│   ├── routes/
+│   │   └── todoRoutes.js
+│   │
+│   ├── controllers/
+│   │   └── todoController.js
+│   │
+│   ├── app.js
+│   └── server.js
+│
+├── .env
+├── .gitignore
+└── package.json
+
+
+
+config/        → database connection
+
+models/        → how Todo looks in MongoDB
+
+routes/        → API URLs
+                 GET /api/todos
+                 POST /api/todos
+                 PATCH /api/todos/:id
+                 DELETE /api/todos/:id
+
+controllers/   → what happens when a route is called
+
+app.js         → configure Express + middleware + routes
+
+server.js      → start/listen on the port
+
+
+
+
+Frontend
+   ↓
+GET /api/todos
+   ↓
+routes/todoRoutes.js
+   ↓
+controllers/todoController.js
+   ↓
+models/Todo.js
+   ↓
+MongoDB
