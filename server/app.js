@@ -1,9 +1,12 @@
 const express = require('express');
 const connectDB = require('./src/config/config')
 const todoRouter = require('./src/routes/todosRouter')
-
+const cors = require('cors')
 
 const app = express();
+app.use(cors({
+    origin: "http://localhost:5173"
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
