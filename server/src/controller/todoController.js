@@ -1,5 +1,7 @@
 const todoModel = require("../models/todo-model")
 const checkRequestEmpty= require('../utils/checkRequestEmpty')
+
+
 module.exports.getTodo = async function(req,res){
     const todos = await todoModel.find();
     return res.status(200).json({"message": "ok",data: todos});
@@ -15,8 +17,8 @@ module.exports.createTodo = async function(req,res){
     const todos = await todoModel.create({
         title: todo
     });
-    return res.status(201).json({"message": "ok",
-        "data": "created"
+    return res.status(201).json({message: "ok",
+        data: todos
     });
 }
  
@@ -30,15 +32,16 @@ module.exports.updateTodo = async function(req,res){
     return res.status(200).json({"message": "ok",
         "data": "updated",
         "id": req.params.id,
-        "dataBody":updatedTodo
+        data: updatedTodo
     });
 }
 module.exports.deleteTodo = async function(req,res){
     let id = req.params.id;
     const deteleTodo = await todoModel.findOneAndDelete({_id: id});
-    return res.status(204).json({"message": "ok",
-        "data": "delete data",
-        "id": req.params.id,
-        "dataBody":deteleTodo
-    });
+    // return res.status(204).json({"message": "ok",
+    //     "data": "delete data",
+    //     "id": req.params.id,
+    //     "dataBody":deteleTodo
+    // });
+    return res.status(204).send();
 }
